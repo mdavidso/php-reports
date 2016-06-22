@@ -94,6 +94,7 @@ class PdoReportType extends ReportTypeBase {
 		$report->conn = new PDO($dsn,$username,$password);
 
 		$report->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$report->conn->exec("SET NAMES 'utf8';");
 	}
 
 	public static function closeConnection(&$report) {
